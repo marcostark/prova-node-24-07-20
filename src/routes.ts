@@ -1,6 +1,7 @@
 import { Router } from "express";
 import { createUserController } from "./useCases/CreateUser"
 import { listUserController } from "./useCases/ListUser"
+import { getUserController } from "./useCases/GetUser"
 
 const routes = Router()
 
@@ -14,6 +15,10 @@ routes.post('/api/users', (request, response) => {
 
 routes.get('/api/users', (request, response) => {
     return listUserController.findAll(request, response)
+})
+
+routes.get('/api/users/:id', (request, response) => {
+    return getUserController.getUser(request, response)
 })
 
 export { routes }

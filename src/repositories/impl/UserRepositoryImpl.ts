@@ -11,8 +11,12 @@ export class UserRepositoryImpl implements IUserRepository {
     async listAll(): Promise<any> {
         return User.find({}) 
     }
+    
     async save(user: UserModel): Promise<void> {
         User.create(user)
     }
 
+    async getUser(id: String): Promise<any> {
+        return User.find(id)
+    }
 }
