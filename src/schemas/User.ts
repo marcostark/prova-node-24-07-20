@@ -1,4 +1,7 @@
 import * as mongoose from 'mongoose'
+import { UserModel } from '../models/UserModel';
+
+type User = mongoose.Document & {};
 
 const UserSchemma = new mongoose.Schema(
     {
