@@ -9,7 +9,7 @@
     "nodemon": "^2.0.4"
   },
   "scripts": {
-    "start-dev": "NODE_ENV=development nodemon -L --watch 'src/**/*.ts' --exec 'ts-node' ./src/server.ts"
+    "dev": "NODE_ENV=development nodemon -L --watch 'src/**/*.ts' --exec 'ts-node' ./src/server.ts"
   },
   "devDependencies": {
     "@types/express": "^4.17.7",
