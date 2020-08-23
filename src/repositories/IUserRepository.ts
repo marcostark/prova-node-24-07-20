@@ -5,4 +5,5 @@ export interface IUserRepository {
     save(user: UserModel): Promise<void>
     listAll():Promise<any>
     getUser(id: string):Promise<any>
+    remove(id: string):Promise<any>
 }
