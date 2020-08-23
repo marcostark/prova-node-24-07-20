@@ -3,6 +3,7 @@ import { createUserController } from "./useCases/CreateUser"
 import { listUserController } from "./useCases/ListUser"
 import { getUserController } from "./useCases/GetUser"
 import { removeUserController } from "./useCases/RemoveUser"
+import { updateUserController } from "./useCases/UpdateUser"
 
 const routes = Router()
 
@@ -25,5 +26,10 @@ routes.get('/api/users/:id', (request, response) => {
 routes.delete('/api/users/:id', (request, response) => {
     return removeUserController.remove(request, response)
 })
+
+routes.put('/api/users/:id', (request, response) => {
+    return updateUserController.update(request, response)
+})
+
 
 export { routes }

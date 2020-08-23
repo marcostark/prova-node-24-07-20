@@ -23,4 +23,10 @@ export class UserRepositoryImpl implements IUserRepository {
     async remove(id: String): Promise<any> {
         return User.findOneAndDelete(id)
     }
+
+    async update(id, data): Promise<any> {
+        return User.findOneAndUpdate(id, data, {
+            new: true, useFindAndModify: false 
+        })
+    }
 }
