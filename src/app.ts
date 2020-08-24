@@ -2,8 +2,7 @@ import * as express from 'express';
 import { routes } from './routes';
 import * as bodyParser from 'body-parser'
 
-import database from './config/database';
-import Controller from './useCases/CreateUser/CreateUserController'
+noimport database from './config/database';
 
 class App {
     

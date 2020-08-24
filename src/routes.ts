@@ -4,14 +4,16 @@ import { listUserController } from "./useCases/ListUser"
 import { getUserController } from "./useCases/GetUser"
 import { removeUserController } from "./useCases/RemoveUser"
 import { updateUserController } from "./useCases/UpdateUser"
+import Validator from "./middlewares/Validator"
 
 const routes = Router()
+const validator = new Validator()
 
 routes.get('/', (request, response) => {
     response.json({message: "Hello world!"})
 })
 
-routes.post('/api/users', (request, response) => {
+routes.post('/api/users', validator.userValidationRules, validator.validate, (request, response) => {
     return createUserController.create(request, response)
 })
 

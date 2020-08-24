@@ -1,4 +1,8 @@
 import App from './app'
 
-App.app.listen(3333)
+const port = 3333
+
+App.app.listen(port, () => {
+    console.log(`App listening on the http://localhost:${port}`)
+})
 
